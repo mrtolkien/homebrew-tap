@@ -1,25 +1,25 @@
 class Ura < Formula
   desc "The ura command-line tool."
   homepage "https://github.com/mrtolkien/uraeda"
-  version "0.8.0"
+  version "0.9.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mrtolkien/uraeda/releases/download/v0.8.0/uraeda-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "1dc402b1bfdbc3bf87f4e9698539f52d621a22df4e49634c729429ec2caf00ea"
+      url "https://github.com/mrtolkien/uraeda/releases/download/v0.9.0/uraeda-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "b8a635ca41a91e47eb4bcecc0dc506c3b42c680adb4c54b5df03e2b3881f5928"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mrtolkien/uraeda/releases/download/v0.8.0/uraeda-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "f0bb3ef228b45cfc087fc6244934d8a489a4cda0f8e45c0806b1e3f2579b1dcc"
+      url "https://github.com/mrtolkien/uraeda/releases/download/v0.9.0/uraeda-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "294edc1ba101fe337836cb8baea69b2bd42cdb6a94fd6f9e337bd67410f4cc6b"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mrtolkien/uraeda/releases/download/v0.8.0/uraeda-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "0b0e1b3b04d52f312594eb0c4d88276f41f757e5348da2df8ee23cb2663919f9"
+      url "https://github.com/mrtolkien/uraeda/releases/download/v0.9.0/uraeda-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "a02978754c04d21a84857ff5de6f95d78a01ebf46c80ba32938acb7eb9397400"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mrtolkien/uraeda/releases/download/v0.8.0/uraeda-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "9ac3bd83ef46e9aea675c247dede82bebf5cacba9c2a77681e47ccc4828dd419"
+      url "https://github.com/mrtolkien/uraeda/releases/download/v0.9.0/uraeda-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "97c2d26c6af5e0d97848c82516f3667d8c15cb5a71de907ffa6db477d21b9e95"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -61,6 +61,7 @@ class Ura < Formula
     end
 
     install_binary_aliases!
+    generate_completions_from_executable(bin/"ura", shell_parameter_format: :clap, shells: [:fish, :zsh])
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
