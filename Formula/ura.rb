@@ -1,25 +1,25 @@
 class Ura < Formula
   desc "The ura command-line tool."
   homepage "https://github.com/mrtolkien/uraeda"
-  version "3.2.0"
+  version "3.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mrtolkien/uraeda/releases/download/v3.2.0/uraeda-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "7db48cfcd99ca486f26627631483c065b221509666913bd9573a47193876e2ff"
+      url "https://github.com/mrtolkien/uraeda/releases/download/v3.3.0/uraeda-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "e448ca13c6f418898656070191fc051ab45d33bc8a580f507a82a53fc9cc19f3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mrtolkien/uraeda/releases/download/v3.2.0/uraeda-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "07f8bad40f238940b99691265481471250e23593416c6fed199806fa2107889e"
+      url "https://github.com/mrtolkien/uraeda/releases/download/v3.3.0/uraeda-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "fc9695d14ee3f9789b7e0ae667435014915bbdbe36495103a135a61f641238c6"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mrtolkien/uraeda/releases/download/v3.2.0/uraeda-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "590299aee907cc3c05781c8aa69c7ae86a42fe0596f14419e9b0065d911092af"
+      url "https://github.com/mrtolkien/uraeda/releases/download/v3.3.0/uraeda-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "8a4f7ddd48a4405a10b34c46796d390d9ec9377e124a653b12369a2501458611"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mrtolkien/uraeda/releases/download/v3.2.0/uraeda-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "be11901fc1f2aaa256d4253363ba90868652e1aa57260a4c1b08674ad79ae098"
+      url "https://github.com/mrtolkien/uraeda/releases/download/v3.3.0/uraeda-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "839dfa763e1a35d6de01b050a54292b2fc349dd2a17c7ec0b52f658281f0e8f7"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
